@@ -48,35 +48,6 @@ def getNeighbours(graph, vertex):
             neighbours.append(index)
     return neighbours
 
-# def dSaturColoration(graph) -> list:
-#     affectedColors = [0] * len(graph)
-
-#     order = getOrder(graph)
-
-#     for vertex in order:
-#         if affectedColors[int(vertex)] == 0:
-#             if affectedColors.count(1) == 0:
-#                 affectedColors[int(vertex)] = 1
-#             else:
-#                 neighbours = getNeighbours(graph, int(vertex))
-#                 if len(neighbours) == 0:
-#                     affectedColors[int(vertex)] = 1
-#                 else:
-#                     minColor = len(graph[0]) + 1
-#                     maxColor = -1
-#                     for neighbour in neighbours:
-#                         if affectedColors[neighbour] != 0 and affectedColors[neighbour] < minColor:
-#                             minColor = affectedColors[neighbour]
-#                         if affectedColors[neighbour] > maxColor:
-#                             maxColor = affectedColors[neighbour]
-#                     if minColor > 1:
-#                         print("VERTEX : ", vertex)
-#                         print(minColor - 1)
-#                         affectedColors[int(vertex)] = minColor - 1
-#                     else:
-#                         affectedColors[int(vertex)] = maxColor + 1
-#     return affectedColors
-
 def dSaturColoration(graph) -> list:
     totalColors = list(range(1,len(graph)))
     affectedColors = [0] * len(graph)
